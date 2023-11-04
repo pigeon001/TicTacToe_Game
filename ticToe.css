@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 100%;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, rgb(43, 177, 226), rgb(12, 4, 124));
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* body {
+    background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
+} */
+
+.box {
+    /* --letSize: 97vw; */
+    width: 97vw;
+    height: 97vw;
+    max-width: 700px;
+    max-height: 700px;
+    margin: auto;
+    padding: 1em;
+    padding: auto;
+
+    box-shadow: 0 0 6px 6px #d2d2d2;
+    border-radius: 1em;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    user-select: none;
+    display: none;
+    /* font-size: calc(var(--letSize)/4); */
+    /* font-size: 1em; */
+    overflow-y: scroll;
+    position: relative;
+}
+
+.box::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width:570px) {
+    .box {
+        width: 100vw;
+        height: 100vw;
+        max-width: 100%;
+    }
+}
+
+.cell {
+    /* --size: ; the size will be defined by js*/
+
+    width: calc(var(--size));
+    height: calc(var(--size));
+    border-radius: calc(var(--size));
+    display: inline-block;
+    margin: 0;
+    /* background: radial-gradient(rgb(8, 8, 241), rgb(5, 5, 116)); */
+    background: linear-gradient(240deg, rgb(8, 8, 101), rgb(11, 11, 241), rgb(4, 4, 0));
+
+    text-align: center;
+    /* font-size: calc(var(--size)*18); */
+    /* font-size: 1em; */
+    vertical-align: middle;
+    padding: auto;
+    border: 2px solid white;
+    color: aliceblue;
+    font-size: calc(var(--font_size));
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+
+}
+
+/* 
+@keyframes font {
+    from {
+        font-size: 0px;
+    }
+
+    to {
+        font-size: calc(var(--font_size));
+    }
+}
+
+/* .cell:focus,
+.cell:active,
+.cell:hover  */
+.cell {
+    animation: font 1s linear 0s;
+    animation-fill-mode: forwards;
+}
+
+button {
+    display: none;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 50%;
+    user-select: none;
+    font-size: larger;
+    font-weight: bold;
+    color: rgb(4, 4, 177);
+    border: none;
+    transition: transform 1s ease-out 0s, color 0.5s ease-in 0s;
+}
+
+button:hover,
+button:focus {
+    background: radial-gradient(rgb(15, 41, 209), rgb(2, 4, 18));
+    color: white;
+    box-shadow: 0 0 4px 2px;
+    transform: scale(1.5);
+}
+
+.action {
+    padding: auto;
+    text-align: center;
+    position: relative;
+    top: 30vh;
+}
+
+/*Touch Animations*/
+.touch {
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    background: radial-gradient(transparent, rgba(245, 244, 247, 0.5));
+    position: fixed;
+    animation: ontouch 1.5s linear 1;
+}
+
+@keyframes ontouch {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(90);
+        opacity: 1;
+    }
+}
+
+input {
+    padding: 1em;
+    min-height: 40px;
+    border-radius: 1em;
+    border: none;
+    display: inline-block;
+    margin: 1em;
+}
+
+input[type='number'] {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    /* max-width: 600px; */
+    text-align: center;
+    padding: .5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+
+}
+
+input[type='number']:hover {
+    animation: rot 4s linear 0s infinite;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+    /* transform: rotateZ(45deg); */
+}
+
+input:hover {
+    box-shadow: 0px 0px 4px 4px #d2d2d2;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 70%;
+    padding-bottom: 10em;
+}
+
+@keyframes rot {
+    from {
+        transform: rotate(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) rotateY(360deg);
+    }
+}
