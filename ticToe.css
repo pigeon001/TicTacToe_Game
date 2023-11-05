@@ -19,6 +19,35 @@ html {
     background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
 } */
 
+h1 {
+    line-height: 0px;
+    word-spacing: -6px;
+}
+
+.bounce,
+.bounce:hover {
+    display: inline-block;
+    position: relative;
+    animation: ups 2s linear 1s;
+    /* transform: translateY(-20px);*/
+    transition: animation 1s linear;
+    /* color: rgb(0, 128, 255) */
+}
+
+@keyframes ups {
+    0% {
+        transform: translateY(0) rotate(-20deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(20deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-20deg);
+    }
+}
+
 .box {
     /* --letSize: 97vw; */
     width: 97vw;
@@ -62,12 +91,12 @@ html {
     display: inline-block;
     margin: 0;
     /* background: radial-gradient(rgb(8, 8, 241), rgb(5, 5, 116)); */
-    background: linear-gradient(240deg, rgb(8, 8, 101), rgb(11, 11, 241), rgb(4, 4, 0));
-
+    background: linear-gradient(240deg, rgb(5, 5, 72), rgb(11, 11, 241), rgb(4, 4, 0));
     text-align: center;
     /* font-size: calc(var(--size)*18); */
     /* font-size: 1em; */
     vertical-align: middle;
+    /* padding: 15%; */
     padding: auto;
     border: 2px solid white;
     color: aliceblue;
@@ -75,10 +104,11 @@ html {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
-
+    /* font-size: calc(var(--font-size)); */
+    /* transition: background 2s linear; */
 }
 
-/* 
+
 @keyframes font {
     from {
         font-size: 0px;
@@ -93,8 +123,13 @@ html {
 .cell:active,
 .cell:hover  */
 .cell {
-    animation: font 1s linear 0s;
+    animation: 1s linear 0s;
     animation-fill-mode: forwards;
+
+}
+
+.cell:hover {
+    background: linear-gradient(240deg, rgb(11, 11, 241), rgb(4, 4, 40), rgb(8, 8, 141));
 }
 
 button {
@@ -132,7 +167,7 @@ button:focus {
     border-radius: 50%;
     background: radial-gradient(transparent, rgba(245, 244, 247, 0.5));
     position: fixed;
-    animation: ontouch 1.5s linear 1;
+    animation: ontouch 1s linear 1;
 }
 
 @keyframes ontouch {
@@ -147,13 +182,24 @@ button:focus {
     }
 }
 
-input {
+form {
+    max-width: 400px;
+    margin: auto;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 70%;
+    padding-bottom: 10em;
+    transition: border-radius 1s linear;
+}
+
+.input {
     padding: 1em;
     min-height: 40px;
     border-radius: 1em;
     border: none;
     display: inline-block;
     margin: 1em;
+    font-family: sans-serif;
+
 }
 
 input[type='number'] {
@@ -161,15 +207,24 @@ input[type='number'] {
     height: 60px;
     border-radius: 30px;
     /* max-width: 600px; */
-    text-align: center;
     padding: .5em;
     font-family: 'Times New Roman', Times, serif;
     font-size: larger;
-
+    text-align: center;
 }
 
-input[type='number']:hover {
+.rotate:hover {
     animation: rot 4s linear 0s infinite;
+}
+
+@keyframes rot {
+    from {
+        transform: rotate(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) rotateY(360deg);
+    }
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -184,24 +239,53 @@ input:focus {
     /* transform: rotateZ(45deg); */
 }
 
-input:hover {
+.inp:hover {
     box-shadow: 0px 0px 4px 4px #d2d2d2;
 }
 
-form {
-    max-width: 400px;
-    margin: auto;
-    border-bottom: 2px solid whitesmoke;
-    border-radius: 70%;
-    padding-bottom: 10em;
+
+
+
+/* 
+input[type="submit"] {
+    transition: transform 1s cubic-bezier(0.16, 0.5, 0, 1);
+} */
+
+.eyeSrink:hover {
+    transform: scaleY(0.5) scaleX(1.2);
+    transition: transform 1s cubic-bezier(0.16, 0.5, 0, 1);
 }
 
-@keyframes rot {
-    from {
-        transform: rotate(0deg) rotateY(0deg);
-    }
-
-    to {
-        transform: rotate(360deg) rotateY(360deg);
-    }
+.eyeShort:hover,
+.eyeShort:active {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    transition: scale(1.2);
 }
+
+
+
+
+
+
+/* .leftEye:hover {
+    padding-left: 0.1em;
+    transform: scale(1.1);
+}
+
+.rightEye:hover {
+    padding-right: 0.1em;
+    transform: scale(1.1);
+} */
+
+
+
+
+/* input[type="reset"] {
+    transition: transform 2s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+}
+
+input[type="reset"]:active,
+input[type="reset"]:hover {
+    transform: scaleX(.7) scaleY(1.5);
+} */

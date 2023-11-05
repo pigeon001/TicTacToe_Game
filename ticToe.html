@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="ticToe.css" />
-        <link rel="stylesheet" href="bubble_animation.css">
+        <link rel="stylesheet" href="bubble_anim.css">
         <title>TicTacToe</title>
         <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -32,19 +32,41 @@
             <div class="circle"><span class="dot"></span></div>
         </div>
         <div class="action">
-            <form action id="form">
-                <h1 style="color:blanchedalmond">Let's Play</h1>
-                <input type="submit" value="  Play  ">
-                <input type="reset" value="Reset"><br>
-                <input type="number" id="key" min="1" name="k-value"
+            <form id="form">
+                <h1 style="color:blanchedalmond">
+                    <span class="bounce"
+                        style="animation-delay: 0s;animation-duration: 3.5s;">L</span>
+                    <span class="bounce"
+                        style="animation-delay: 1s;animation-duration: 3s;">e</span>
+                    <span class="bounce"
+                        style="animation-delay: 2s; animation-duration: 3s;">t</span>
+                    <span class="bounce"
+                        style="animation-delay: 3s; animation-duration: 3s;">'</span>
+                    <span class="bounce"
+                        style="animation-delay: 4s; animation-duration: 3s;">s</span>
+                    <span class="bounce">&ThickSpace;</span>
+                    <span class="bounce"
+                        style="animation-delay: 5s; animation-duration: 4s;">P</span>
+                    <span class="bounce"
+                        style="animation-delay: 6s; animation-duration: 3s;">l</span>
+                    <span class="bounce"
+                        style="animation-delay: 7s; animation-duration: 2s;">a</span>
+                    <span class="bounce"
+                        style="animation-delay: 8s; animation-duration: 1s;">y</span>
+                </h1>
+                <input type="submit" value="  Play  " id="inp_sub"
+                    class="input inp eyeSrink">
+                <input type="reset" value="Reset" id="inp_res" class="input inp"><br>
+                <input type="number" id="key" name="k-value"
+                    class="input inp rotate"
                     placeholder="&#10084;" />
             </form>
             <div class="box" id="box">
             </div>
             <button id="reset">Reset</button>
         </div>
-        <script src="../new_main.js" async></script>
-        <script src="../onTouchAnim.js" async></script>
+        <script src="javascript/ticToe_main.js" async></script>
+        <script src="javascript/onTouchAnim.js" async></script>
     </body>
 
 </html>
