@@ -5,7 +5,7 @@ try {
     let boardId = document.getElementById('box');
     // let cellC=document.getElementsByClassName('cell');
     if (touchDevice) {
-        boardId.addEventListener('click', (pnt) => {
+        boardId.addEventListener('click', pnt => {
             var newP = document.createElement('div');
             newP.className = "touch";
             newP.setAttribute('id','demo');
@@ -16,7 +16,7 @@ try {
         })
     }
     else {
-        boardId.addEventListener('click', (pnt) => {
+        boardId.addEventListener('click', pnt => {
             var newP = document.createElement('div');
             newP.className = "touch";
             newP.setAttribute('id','demo');
